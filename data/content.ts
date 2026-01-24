@@ -15,8 +15,8 @@ const portfolioItems: PortfolioItem[] = [
     { id: 34, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix5/500/500', title: '【이오몽 X 앵보】- 로키 (ロキ) (AGF 2025)', role: 'Vocal Mix/Master', date: '2025.03', youtubeId: 'cGSq0tRB8WU' },
     { id: 35, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix6/500/500', title: '부쿠키 & 앵보 - JANE DOE (AGF 2025)', role: 'Vocal Mix/Master', date: '2025.03', youtubeId: 'Q_8qdg8oAGs' },
     { id: 36, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix7/500/500', title: '미녕이, 희지 - 포지티브☆댄스 타임 (AGF 2025)', role: 'Vocal Mix/Master', date: '2025.03', youtubeId: 'LHTijE7Wuic' },
-    { id: 30, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix1/500/500', title: '독쥐 - 보컬 디렉팅 및 믹스마스터링 (라온 Office 협업)', role: 'Vocal Directing, Mix/Master', date: '2024.06', youtubeId: 'QUFznPj7bak' },
-    { id: 37, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix8/500/500', title: '라온 Office 협업 / 보컬 디렉팅 및 믹스 마스터링', role: 'Vocal Directing, Mix/Master', date: '2024.07', youtubeId: 'dI3myyT-Uwg' },
+    { id: 30, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix1/500/500', title: '독쥐 - Be I 보컬 디렉팅 및 믹스 마스터링 (라온 Office 협업)', role: 'Vocal Directing, Mix/Master', date: '2024.06', youtubeId: 'QUFznPj7bak' },
+    { id: 37, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix8/500/500', title: '라온 Office 협업 / 보컬 디렉팅 ', role: 'Vocal Directing', date: '2024.07', youtubeId: 'dI3myyT-Uwg' },
 
     // 라이브 사운드 오퍼레이팅
     { id: 40, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live_dubbing_forest/500/500', title: '더빙의 숲 3 본선 스튜디오 사운드 오퍼레이팅', role: 'Studio Sound Operating', date: '2024.07', youtubeId: 'oEzw_Ay90kU' },
