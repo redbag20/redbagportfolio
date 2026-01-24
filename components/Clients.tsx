@@ -16,27 +16,42 @@ interface ClientsProps {
 
 const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
     const marqueeRef = useRef<HTMLDivElement>(null);
+    const animation = useRef<any>(null);
 
     useEffect(() => {
+        // Clean up previous animation if dependencies change
+        animation.current?.kill();
+        
         if (!marqueeRef.current || typeof window === 'undefined' || !window.gsap || clients_data.length === 0) return;
         const { gsap } = window;
         const marquee = marqueeRef.current;
-        
-        const itemsArr = gsap.utils.toArray('.client-logo') as HTMLDivElement[];
-        if(itemsArr.length === 0) return;
 
-        const totalWidth = itemsArr.reduce((acc, item) => acc + item.offsetWidth, 0) / 2; // Divided by 2 because we duplicate the items
+        // Use a small timeout to let images render and calculate correct widths
+        const timer = setTimeout(() => {
+            const itemsArr = gsap.utils.toArray('.client-logo') as HTMLDivElement[];
+            if (itemsArr.length === 0) return;
 
-        const ctx = gsap.context(() => {
-            gsap.to(marquee, {
+            const totalWidth = itemsArr.reduce((acc, item) => acc + item.offsetWidth, 0) / 2;
+            if (totalWidth === 0) return;
+
+            gsap.set(marquee, { x: 0 });
+
+            animation.current = gsap.to(marquee, {
                 x: `-=${totalWidth}`,
-                duration: clients_data.length * 8,
+                duration: totalWidth / 80, // Duration based on width for consistent speed (80px/sec)
                 ease: 'none',
                 repeat: -1,
+                modifiers: {
+                    // This modifier creates the seamless looping effect
+                    x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
+                }
             });
-        }, marquee);
-        
-        return () => ctx.revert();
+        }, 100);
+
+        return () => {
+            clearTimeout(timer);
+            animation.current?.kill();
+        };
     }, [clients_data]);
 
     return (
@@ -45,13 +60,13 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
                 <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">{content.title}</h2>
             </div>
             <div className="w-full overflow-hidden scroll-reveal">
-                <div ref={marqueeRef} className="flex w-max">
+                <div ref={marqueeRef} className="flex w-max items-center">
                     {[...clients_data, ...clients_data].map((client, index) => (
-                        <div key={index} className="client-logo px-10 md:px-16 flex-shrink-0">
+                        <div key={index} className="client-logo px-12 md:px-20 flex-shrink-0">
                             <img 
                                 src={client.logo} 
                                 alt={client.name} 
-                                className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300" 
+                                className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" 
                             />
                         </div>
                     ))}
