@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import type { Language } from '../types';
 
@@ -10,12 +9,14 @@ interface HeaderProps {
         nav: {
             about: string;
             portfolio: string;
+            pricing: string;
             contact: string;
         }
     };
+    onNavigate: (page: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ language, setLanguage, content }) => {
+const Header: React.FC<HeaderProps> = ({ language, setLanguage, content, onNavigate }) => {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -38,12 +39,13 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, content }) => {
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-lg border-b border-gray-800/50' : 'bg-transparent'}`}>
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <button onClick={() => scrollToSection('hero')} className="text-2xl font-black text-white text-glow tracking-wider focus:outline-none focus-visible:ring-2 ring-red-500 rounded-sm px-1">
+                <button onClick={() => onNavigate('home')} className="text-2xl font-black text-white text-glow tracking-wider focus:outline-none focus-visible:ring-2 ring-red-500 rounded-sm px-1">
                     {content.logo}
                 </button>
                 <nav className="hidden md:flex items-center space-x-10">
                     <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-wide">{content.nav.about}</button>
                     <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-wide">{content.nav.portfolio}</button>
+                    <button onClick={() => onNavigate('pricing')} className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-wide">{content.nav.pricing}</button>
                     <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-wide">{content.nav.contact}</button>
                 </nav>
                 <div className="flex items-center space-x-1 bg-gray-900/50 border border-gray-700/60 rounded-full p-0.5">

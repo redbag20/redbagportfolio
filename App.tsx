@@ -1,19 +1,17 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Clients from './components/Clients';
-import Contact from './components/Contact';
+import HomePage from './pages/HomePage';
+import PricingPage from './pages/PricingPage';
 import { content } from './data/content';
 import type { Language } from './types';
 
 const App: React.FC = () => {
     const [language, setLanguage] = useState<Language>('KR');
+    const [page, setPage] = useState('home');
     const currentContent = content[language];
 
     useEffect(() => {
+        // This effect needs to re-run when the page changes to observe new elements
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -31,18 +29,22 @@ const App: React.FC = () => {
         return () => {
             targets.forEach(target => observer.unobserve(target));
         };
-    }, []);
+    }, [page, language]); // Re-run on page and language change
+
+    const navigate = (targetPage: string) => {
+        setPage(targetPage);
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    };
+
+    const pages: { [key: string]: React.ReactNode } = {
+        home: <HomePage content={currentContent} />,
+        pricing: <PricingPage content={currentContent.pricing} onNavigate={navigate} />,
+    };
 
     return (
         <div className="bg-[#050505] min-h-screen overflow-x-hidden">
-            <Header language={language} setLanguage={setLanguage} content={currentContent.header} />
-            <main>
-                <Hero content={currentContent.hero} />
-                <About content={currentContent.about} />
-                <Portfolio content={currentContent.portfolio} />
-                <Clients content={currentContent.clients} clients_data={currentContent.clients_data} />
-                <Contact content={currentContent.contact} />
-            </main>
+            {page === 'home' && <Header language={language} setLanguage={setLanguage} content={currentContent.header} onNavigate={navigate} />}
+            {pages[page]}
         </div>
     );
 };
