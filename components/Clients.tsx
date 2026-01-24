@@ -38,7 +38,7 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
 
             animation.current = gsap.to(marquee, {
                 x: `-=${totalWidth}`,
-                duration: totalWidth / 80, // Duration based on width for consistent speed (80px/sec)
+                duration: totalWidth / 40, // Slower speed: Duration based on width for consistent speed (40px/sec)
                 ease: 'none',
                 repeat: -1,
                 modifiers: {
