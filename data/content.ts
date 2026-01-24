@@ -1,31 +1,46 @@
 import type { PortfolioItem, Client, Language, PortfolioCategory } from '../types';
 
 const portfolioItems: PortfolioItem[] = [
-    { id: 1, category: '오리지널곡', image: 'https://picsum.photos/seed/music1/500/500', title: 'Self-Titled Album', role: 'Composition, Arrangement', date: '2023.10', youtubeId: 'dQw4w9WgXcQ' },
-    { id: 2, category: '오리지널곡', image: 'https://picsum.photos/seed/music2/500/500', title: 'Digital Single "Echoes"', role: 'Composition', date: '2024.01', youtubeId: '3tmd-ClpJxA' },
-    { id: 9, category: '오리지널곡', image: 'https://picsum.photos/seed/norazo/500/500', title: 'Norazo Remix Contest Winner', role: 'Remix, Arrangement', date: '2022.08', youtubeId: '0-q1KafFCLU' },
+    // 오리지널 및 개인 프로젝트
+    { id: 25, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj1/500/500', title: 'Division One (KR) & Red Bag - Music Is My Everything', role: '음악 작곡', date: '2024.03', youtubeId: 'niJU0dqOSqY' },
+    { id: 26, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj2/500/500', title: '청강대학교 졸업작품 BGM', role: '음악 작곡', date: '2023.11', youtubeId: 'TlEWl_qfI5I' },
+    { id: 27, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj3/500/500', title: '사운드클라우드 개인 프로젝트', role: '작곡', date: '2024.01', youtubeId: 'vIwP0vzat2Y' },
+    { id: 28, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj4/500/500', title: '이스트게임즈 BGM 외주', role: '작곡', date: '2023.09', youtubeId: '9O_60zzt5mc' },
     
-    { id: 10, category: '믹스마스터', image: 'https://picsum.photos/seed/raon1/500/500', title: '라온 - 독쥐', role: '라온 Office 협업 / 보컬 디렉팅', date: '2024.05', youtubeId: 'dI3myyT-Uwg' },
-    { id: 11, category: '믹스마스터', image: 'https://picsum.photos/seed/raon2/500/500', title: '라온 - 독쥐', role: '라온 Office 협업 / 보컬 디렉팅 및 믹스 마스터링', date: '2024.05', youtubeId: 'QUFznPj7bak' },
-    { id: 12, category: '믹스마스터', image: 'https://picsum.photos/seed/suncheon1/500/500', title: '순천페스티벌 - 미녕이데려오께', role: '오퍼레이팅 및 Vocal Mix/Master', date: '2023.11', youtubeId: 'eWwUkpY1DjU' },
-    { id: 13, category: '믹스마스터', image: 'https://picsum.photos/seed/suncheon2/500/500', title: '순천페스티벌 - 마젯', role: '오퍼레이팅 및 Vocal Mix/Master', date: '2023.11', youtubeId: 'KuXSAe-Sm5o' },
-    { id: 14, category: '믹스마스터', image: 'https://picsum.photos/seed/agf1/500/500', title: 'AGF 2025 - 스콘', role: '블루스테이지 음향 오퍼레이팅 및 Vocal Mix & Master', date: '2023.12', youtubeId: 'cGSq0tRB8WU' },
-    { id: 15, category: '믹스마스터', image: 'https://picsum.photos/seed/agf2/500/500', title: 'AGF 2025 - 스콘', role: '블루스테이지 음향 오퍼레이팅 및 Vocal Mix & Master', date: '2023.12', youtubeId: 'Q_8qdg8oAGs' },
-    { id: 16, category: '믹스마스터', image: 'https://picsum.photos/seed/agf3/500/500', title: 'AGF 2025 - 스콘', role: '블루스테이지 음향 오퍼레이팅 및 Vocal Mix & Master', date: '2023.12', youtubeId: 'LHTijE7Wuic' },
+    // 보컬 디렉팅 및 믹스마스터링
+    { id: 32, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix3/500/500', title: '미녕이데려오께 - 있잖아 (글로벌 콘텐츠 페스티벌 2025)', role: 'Operating, Vocal Mix/Master', date: '2025.01', youtubeId: 'eWwUkpY1DjU' },
+    { id: 33, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix4/500/500', title: '마젯 - 좋지 아니한가 (글로벌 콘텐츠 페스티벌 2025)', role: 'Operating, Vocal Mix/Master', date: '2025.01', youtubeId: 'KuXSAe-Sm5o' },
+    { id: 34, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix5/500/500', title: '【이오몽 X 앵보】- 로키 (ロキ) (AGF 2025)', role: 'Vocal Mix/Master', date: '2025.03', youtubeId: 'cGSq0tRB8WU' },
+    { id: 35, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix6/500/500', title: '부쿠키 & 앵보 - JANE DOE (AGF 2025)', role: 'Vocal Mix/Master', date: '2025.03', youtubeId: 'Q_8qdg8oAGs' },
+    { id: 36, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix7/500/500', title: '미녕이, 희지 - 포지티브☆댄스 타임 (AGF 2025)', role: 'Vocal Mix/Master', date: '2025.03', youtubeId: 'LHTijE7Wuic' },
+    { id: 30, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix1/500/500', title: '독쥐 - 보컬 디렉팅 및 믹스마스터링 (라온 Office 협업)', role: 'Vocal Directing, Mix/Master', date: '2024.06', youtubeId: 'QUFznPj7bak' },
+    { id: 37, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix8/500/500', title: '라온 Office 협업 / 보컬 디렉팅 및 믹스 마스터링', role: 'Vocal Directing, Mix/Master', date: '2024.07', youtubeId: 'dI3myyT-Uwg' },
 
-    { id: 4, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live1/500/500', title: 'Virtual Concert Live Sound', role: 'Live Sound Mix', date: '2024.02', youtubeId: 'L-iepuo0_kI' },
+    // 라이브 사운드 오퍼레이팅
+    { id: 17, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live2/500/500', title: '이오몽 X 정동하 생방송 음향 총괄', role: 'Live Sound Operating', date: '2024.04', youtubeId: 'llZ4MTcy7Uk' },
+    { id: 18, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live3/500/500', title: 'IXIA 데뷔 생방송 음향 세팅 총괄', role: 'Live Sound Mix', date: '2024.03', youtubeId: 'KNABwaYmuA8' },
+    { id: 19, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live4/500/500', title: '미츄 생방송 음향 및 OBS 오퍼레이팅', role: 'Sound Operating', date: '2024.02', youtubeId: 'Rb9sZlmyvPY' },
+    { id: 20, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live5/500/500', title: '미츄 생방송 음향 및 OBS 오퍼레이팅', role: 'Live Mix & Operating', date: '2024.01', youtubeId: 'QwtCBZ4pexE' },
 
-    { id: 5, category: '상업음악', image: 'https://picsum.photos/seed/game1/500/500', title: 'Splatoon Fan Remix', role: 'Remix, Sound Design', date: '2023.11', youtubeId: '5-_BvV_9_5E' },
-    { id: 6, category: '상업음악', image: 'https://picsum.photos/seed/scon1/500/500', title: 'Scon Broadcast Content', role: 'BGM, Sound FX', date: 'Ongoing', youtubeId: 'sB6HY8r983I' },
-    { id: 7, category: '상업음악', image: 'https://picsum.photos/seed/eastgames/500/500', title: 'Eastgames Project BGM', role: 'BGM Composition', date: '2023.09', youtubeId: '8N_tupPBtWQ' },
+    // BGM / 사운드 디자인
+    { id: 29, category: '상업음악', image: 'https://picsum.photos/seed/ckgrad_theme/500/500', title: '청강대학교 졸업작품 테마음악 작곡 및 사운드 디자인', role: '작곡, 사운드 디자인', date: '2023.11', youtubeId: 'kEXy9BSZiiA' },
+    { id: 5, category: '상업음악', image: 'https://picsum.photos/seed/rework1/500/500', title: '애플 아이폰12 광고 Music Re-Work', role: '작곡, Sound Design', date: '2020.11', youtubeId: 'P2QGJ1B5ZfQ' },
+    { id: 6, category: '상업음악', image: 'https://picsum.photos/seed/concert1/500/500', title: '이오몽의 시간정원 개인 콘서트 인트로 음악 작곡', role: 'BGM, Sound FX', date: '2023.12', youtubeId: 'FZpBnK_KLHA' },
+    { id: 7, category: '상업음악', image: 'https://picsum.photos/seed/popcon1/500/500', title: '2023 서울팝콘 etoile X SSHOW LAB', role: '메인 스테이지 및 전시회 음악 작곡', date: '2023.08', youtubeId: '_U9o-JqZkgs' },
+    { id: 21, category: '상업음악', image: 'https://picsum.photos/seed/sdesign1/500/500', title: '캐니 데뷔 영상 SFX 및 FOLEY 작업', role: 'Sound Design', date: '2024.04', youtubeId: 'zml7uogLVIY' },
+    { id: 22, category: '상업음악', image: 'https://picsum.photos/seed/sdesign2/500/500', title: '16BIT 방송 BGM 작곡', role: 'Sound Design', date: '2024.05', youtubeId: 'Ix7qRPU4Obw' },
+    { id: 23, category: '상업음악', image: 'https://picsum.photos/seed/sdesign3/500/500', title: '16BIT 방송 BGM 작곡', role: 'Sound Design & BGM', date: '2023.11', youtubeId: 'uarVt1vK9wc' },
+    { id: 24, category: '상업음악', image: 'https://picsum.photos/seed/sdesign4/500/500', title: '개인 사운드 디자인 프로젝트', role: 'Sound Design', date: '2023.07', youtubeId: 'aHmgsweg3VE' },
 ];
 
 const clients: Client[] = [
-    { name: 'Scon', logo: 'https://picsum.photos/seed/sconlogo/200/100' },
-    { name: 'Jeonghwa Arts University', logo: 'https://picsum.photos/seed/jhlogo/200/100' },
-    { name: 'Eastgames', logo: 'https://picsum.photos/seed/eastgameslogo/200/100' },
-    { name: 'Seoul Popcon', logo: 'https://picsum.photos/seed/popconlogo/200/100' },
-    { name: 'Chungkang College', logo: 'https://picsum.photos/seed/cklogo/200/100' },
+    { name: 'Scon', logo: 'https://pbs.twimg.com/profile_images/1125269004904361984/X3pQ3wFU_400x400.jpg' },
+    { name: 'Jeonghwa Arts University', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE8-rveK58-1enSiGDsrQcgsvN9wOnySKbFw&s' },
+    { name: 'Eastgames', logo: 'https://image.rocketpunch.com/company/17405/estgames_logo_1750052791.png' },
+    { name: 'LAON OFFICE', logo: 'https://pbs.twimg.com/profile_images/1871266456740265984/kRkcI3OG_400x400.jpg' },
+    { name: 'MINGLE STUDIO', logo: 'https://pbs.twimg.com/profile_images/1952981954422550528/oL-hwEcv_400x400.jpg' },
+    { name: 'Seoul Popcon', logo: 'https://cdn.imweb.me/thumbnail/20211108/71d3548116207.gif' },
+    { name: 'Chungkang College', logo: 'https://i.namu.wiki/i/csCcJKRFNfnbhMzSZZG9oaZ8kIvX3jHRDUBwTmDEQ1SZdZc6_MB-Rb8JK79wfQ-5MeX0hfI8HQgLF69sR60l3g.svg' },
 ];
 
 const phoneDeckItems = portfolioItems.map(item => ({
@@ -79,7 +94,8 @@ export const content: Record<Language, any> = {
         portfolio: {
             title: 'Portfolio',
             categories: {
-                '오리지널곡': '오리지널곡',
+                '오리지널 및 개인 프로젝트': '오리지널 및 개인 프로젝트',
+                '보컬 디렉팅 및 믹스마스터링': '보컬 디렉팅 및 믹스 마스터링',
                 '믹스마스터': '믹스 & 마스터링',
                 '라이브 사운드 오퍼레이팅': '라이브 사운드 오퍼레이팅',
                 '상업음악': 'BGM / 사운드 디자인',
@@ -106,10 +122,10 @@ export const content: Record<Language, any> = {
                 {
                     title: '믹스 & 마스터링',
                     features: [
-                        '스탠다드 (보정 포함): ₩70,000 (트랙 무제한)',
+                        '스탠다드 (보정 포함, 트랙 무제한): ₩70,000',
                         '베이직 (보정 미포함): ₩50,000',
                         '1절 믹스: ₩40,000',
-                        '음정/박자 보정: +₩20,000 (1인 기준)',
+                        '음정/박자보정(추가 1인당): +₩20,000',
                         '빠른 마감: +₩50,000',
                         '당일 마감: +₩70,000',
                     ],
@@ -195,7 +211,8 @@ export const content: Record<Language, any> = {
         portfolio: {
             title: 'Portfolio',
             categories: {
-                '오리지널곡': 'Original',
+                '오리지널 및 개인 프로젝트': 'Original & Personal Projects',
+                '보컬 디렉팅 및 믹스마스터링': 'Vocal Directing & Mix/Mastering',
                 '믹스마스터': 'Mix & Mastering',
                 '라이브 사운드 오퍼레이팅': 'Live Sound Operating',
                 '상업음악': 'BGM / Sound Design',

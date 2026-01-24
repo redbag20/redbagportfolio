@@ -35,7 +35,7 @@ const PriceCard: React.FC<{ card: PriceCardData }> = ({ card }) => {
     const featuresWithPriceStyling = card.features.map(feature => {
         const parts = feature.split(/(: ₩|: \+₩)/);
         if (parts.length > 1) {
-            const pricePart = parts[1] + parts[2];
+            const pricePart = (parts[1] + parts[2]).replace(' (', '\u00A0(');
             return (
                 <span key={feature}>
                     {parts[0]}

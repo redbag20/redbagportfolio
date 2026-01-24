@@ -12,7 +12,7 @@ interface PortfolioProps {
     }
 }
 
-const portfolioOrder: PortfolioCategory[] = ['오리지널곡', '믹스마스터', '라이브 사운드 오퍼레이팅', '상업음악'];
+const portfolioOrder: PortfolioCategory[] = ['오리지널 및 개인 프로젝트', '보컬 디렉팅 및 믹스마스터링', '믹스마스터', '라이브 사운드 오퍼레이팅', '상업음악'];
 
 const Portfolio: React.FC<PortfolioProps> = ({ content }) => {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
