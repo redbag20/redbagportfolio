@@ -2,10 +2,12 @@ import type { PortfolioItem, Client, Language, PortfolioCategory } from '../type
 
 const portfolioItems: PortfolioItem[] = [
     // 오리지널 및 개인 프로젝트
+    { id: 38, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj5/500/500', title: 'ACID TECHNO ◉ HUNTRIX - TAKEDOWN (Red Bag Remix)', role: 'Remix', date: '2024.07', youtubeId: 'VKBG8B2Puvw' },
+    { id: 39, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj6/500/500', title: 'MIMI - だきしめるまで。(Covered by Kotoha) [Juyong & Red Bag Remix]', role: 'Remix', date: '2024.06', youtubeId: 'izwxUR_NhUQ' },
     { id: 25, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj1/500/500', title: 'Division One (KR) & Red Bag - Music Is My Everything', role: '음악 작곡', date: '2024.03', youtubeId: 'niJU0dqOSqY' },
-    { id: 26, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj2/500/500', title: '청강대학교 졸업작품 BGM', role: '음악 작곡', date: '2023.11', youtubeId: 'TlEWl_qfI5I' },
-    { id: 27, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj3/500/500', title: '사운드클라우드 개인 프로젝트', role: '작곡', date: '2024.01', youtubeId: 'vIwP0vzat2Y' },
-    { id: 28, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj4/500/500', title: '이스트게임즈 BGM 외주', role: '작곡', date: '2023.09', youtubeId: '9O_60zzt5mc' },
+    { id: 26, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj2/500/500', title: 'ALLDAYPROJECT REMIX', role: 'Remix', date: '2023.11', youtubeId: 'TlEWl_qfI5I' },
+    { id: 27, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj3/500/500', title: '3인 리믹스 프로젝트 총괄', role: 'Collab & Remix', date: '2024.01', youtubeId: 'vIwP0vzat2Y' },
+    { id: 28, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj4/500/500', title: 'Karol G - La Vida Es Una [Division One & Red Bag Remix]', role: 'Remix', date: '2023.09', youtubeId: '9O_60zzt5mc' },
     
     // 보컬 디렉팅 및 믹스마스터링
     { id: 32, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix3/500/500', title: '미녕이데려오께 - 있잖아 (글로벌 콘텐츠 페스티벌 2025)', role: 'Operating, Vocal Mix/Master', date: '2025.01', youtubeId: 'eWwUkpY1DjU' },
@@ -17,6 +19,7 @@ const portfolioItems: PortfolioItem[] = [
     { id: 37, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix8/500/500', title: '라온 Office 협업 / 보컬 디렉팅 및 믹스 마스터링', role: 'Vocal Directing, Mix/Master', date: '2024.07', youtubeId: 'dI3myyT-Uwg' },
 
     // 라이브 사운드 오퍼레이팅
+    { id: 40, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live_dubbing_forest/500/500', title: '더빙의 숲 3 본선 스튜디오 사운드 오퍼레이팅', role: 'Studio Sound Operating', date: '2024.07', youtubeId: 'oEzw_Ay90kU' },
     { id: 17, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live2/500/500', title: '이오몽 X 정동하 생방송 음향 총괄', role: 'Live Sound Operating', date: '2024.04', youtubeId: 'llZ4MTcy7Uk' },
     { id: 18, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live3/500/500', title: 'IXIA 데뷔 생방송 음향 세팅 총괄', role: 'Live Sound Mix', date: '2024.03', youtubeId: 'KNABwaYmuA8' },
     { id: 19, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live4/500/500', title: '미츄 생방송 음향 및 OBS 오퍼레이팅', role: 'Sound Operating', date: '2024.02', youtubeId: 'Rb9sZlmyvPY' },
