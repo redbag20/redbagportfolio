@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import type { PortfolioItem } from '../types';
 import { LeftArrowIcon, RightArrowIcon } from './icons/ArrowIcons';
@@ -77,11 +76,11 @@ const PortfolioMarquee: React.FC<PortfolioMarqueeProps> = ({ items, onCardClick 
     };
     
     return (
-        <div className="relative group">
+        <div className="relative group/marquee">
             <button 
                 onClick={() => handleNavClick('left')}
                 aria-label="Scroll left"
-                className="absolute top-1/2 -translate-y-1/2 left-0 z-20 p-3 bg-black/40 rounded-full text-white transition-all duration-300 hover:bg-black/70 disabled:opacity-0 disabled:cursor-not-allowed transform opacity-0 group-hover:opacity-100 -translate-x-4"
+                className="absolute top-1/2 -translate-y-1/2 left-0 z-20 p-3 bg-black/40 rounded-full text-white transition-all duration-300 hover:bg-black/70 disabled:opacity-0 disabled:cursor-not-allowed transform opacity-0 group-hover/marquee:opacity-100 -translate-x-4"
                 disabled={!canScrollLeft}
             >
                 <LeftArrowIcon />
@@ -104,7 +103,7 @@ const PortfolioMarquee: React.FC<PortfolioMarqueeProps> = ({ items, onCardClick 
             <button 
                 onClick={() => handleNavClick('right')}
                 aria-label="Scroll right"
-                className="absolute top-1/2 -translate-y-1/2 right-0 z-20 p-3 bg-black/40 rounded-full text-white transition-all duration-300 hover:bg-black/70 disabled:opacity-0 disabled:cursor-not-allowed transform opacity-0 group-hover:opacity-100 translate-x-4"
+                className="absolute top-1/2 -translate-y-1/2 right-0 z-20 p-3 bg-black/40 rounded-full text-white transition-all duration-300 hover:bg-black/70 disabled:opacity-0 disabled:cursor-not-allowed transform opacity-0 group-hover/marquee:opacity-100 translate-x-4"
                 disabled={!canScrollRight}
             >
                 <RightArrowIcon />

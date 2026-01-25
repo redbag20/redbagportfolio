@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { SummaryIcon, ServicesIcon, StrengthsIcon } from './icons/AboutIcons';
 import { ChevronDownIcon } from './icons/ChevronDownIcon';
@@ -71,7 +70,7 @@ const About: React.FC<AboutProps> = ({ content }) => {
     ];
 
     return (
-        <section id="about" className="py-20 md:py-32 bg-black">
+        <section id="about" className="py-20 md:py-32">
             <div className="container mx-auto px-6 max-w-4xl">
                 <div className="text-center mb-16 scroll-reveal">
                     <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-wider">{content.name}</h2>

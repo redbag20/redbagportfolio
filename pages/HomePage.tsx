@@ -14,11 +14,13 @@ const HomePage: React.FC<HomePageProps> = ({ content }) => {
     return (
         <main>
             <Hero content={content.hero} />
-            <About content={content.about} />
-            <Portfolio content={content.portfolio} />
-            <Clients content={content.clients} clients_data={content.clients_data} />
-            <Contact content={content.contact} />
-            <Footer content={content.footer} />
+            <div className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 to-transparent">
+                <About content={content.about} />
+                <Portfolio content={content.portfolio} />
+                <Clients content={content.clients} clients_data={content.clients_data} />
+                <Contact content={content.contact} />
+                <Footer content={content.footer} />
+            </div>
         </main>
     );
 };

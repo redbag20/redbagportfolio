@@ -97,7 +97,7 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
     }, [clients_data]);
 
     return (
-        <section id="clients" ref={sectionRef} className="py-20 md:py-32 bg-[#050505]">
+        <section id="clients" ref={sectionRef} className="py-20 md:py-32">
             <div className="container mx-auto px-6 text-center mb-16 clients-title">
                 <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">{content.title}</h2>
             </div>

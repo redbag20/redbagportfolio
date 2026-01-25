@@ -59,7 +59,7 @@ export const content: Record<Language, any> = {
             nav: {
                 about: 'About',
                 portfolio: 'Portfolio',
-                pricing: 'Price',
+                pricing: 'Pricing',
                 contact: 'Contact',
             },
         },

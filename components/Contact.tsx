@@ -18,7 +18,7 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ content }) => {
     return (
-        <section id="contact" className="py-24 md:py-32 bg-black text-center">
+        <section id="contact" className="py-24 md:py-32 text-center">
             <div className="container mx-auto px-6 scroll-reveal max-w-3xl">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-wider">{content.title}</h2>
                 

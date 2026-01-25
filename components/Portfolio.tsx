@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Modal from './Modal';
 import PortfolioMarquee from './PortfolioMarquee';
@@ -26,8 +25,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ content }) => {
     };
 
     return (
-        <section id="portfolio" className="py-24 md:py-40 bg-black relative overflow-hidden">
-             <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(240,32,32,0.15),rgba(255,255,255,0))]"></div>
+        <section id="portfolio" className="py-24 md:py-40 relative overflow-hidden">
             <div className="container mx-auto px-6 text-center mb-16 scroll-reveal relative z-10">
                 <h2 className="text-4xl md:text-5xl font-black text-white text-glow uppercase tracking-widest">{content.title}</h2>
             </div>
