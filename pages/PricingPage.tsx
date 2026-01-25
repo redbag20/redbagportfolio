@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { ChatIcon } from '../components/icons/ChatIcon';
 import { ArrowLeftIcon } from '../components/icons/ArrowLeftIcon';
+import Footer from '../components/Footer';
 
 interface PriceCardData {
     title: string;
@@ -16,11 +16,16 @@ interface NotesSectionData {
 
 interface PricingPageProps {
     content: {
-        title: string;
-        cards: PriceCardData[];
-        cta_button: string;
-        pricingNotes: NotesSectionData;
-        copyrightNotes: NotesSectionData;
+        pricing: {
+            title: string;
+            cards: PriceCardData[];
+            cta_button: string;
+            pricingNotes: NotesSectionData;
+            copyrightNotes: NotesSectionData;
+        },
+        footer: {
+            copyright: string;
+        }
     }
     onNavigate: (page: string) => void;
 }
@@ -84,6 +89,7 @@ const NotesSection: React.FC<{ notes: NotesSectionData, className?: string }> = 
 
 
 const PricingPage: React.FC<PricingPageProps> = ({ content, onNavigate }) => {
+    const pricingContent = content.pricing;
     return (
         <div className="min-h-screen bg-[#0A0A0A] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 via-[#0A0A0A] to-[#0A0A0A]">
             <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800/50">
@@ -104,21 +110,21 @@ const PricingPage: React.FC<PricingPageProps> = ({ content, onNavigate }) => {
             <main className="pt-24 pb-20 md:pt-32 md:pb-24 animate-page-in">
                  <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-black text-white text-glow uppercase tracking-widest">{content.title}</h1>
+                        <h1 className="text-4xl md:text-5xl font-black text-white text-glow uppercase tracking-widest">{pricingContent.title}</h1>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {content.cards.map((card, index) => (
+                        {pricingContent.cards.map((card, index) => (
                             <PriceCard key={index} card={card} />
                         ))}
                     </div>
 
-                    {content.pricingNotes && (
-                        <NotesSection notes={content.pricingNotes} className="mt-16" />
+                    {pricingContent.pricingNotes && (
+                        <NotesSection notes={pricingContent.pricingNotes} className="mt-16" />
                     )}
 
-                    {content.copyrightNotes && (
-                        <NotesSection notes={content.copyrightNotes} className="mt-8" />
+                    {pricingContent.copyrightNotes && (
+                        <NotesSection notes={pricingContent.copyrightNotes} className="mt-8" />
                     )}
 
                     <div className="text-center mt-20">
@@ -130,13 +136,14 @@ const PricingPage: React.FC<PricingPageProps> = ({ content, onNavigate }) => {
                         >
                             <span className="relative z-10 px-8 py-4 text-white bg-[#FF0F0F] rounded-full transition-transform duration-300 ease-in-out group-hover:scale-105">
                                 <ChatIcon className="inline-block w-5 h-5 mr-2" />
-                                {content.cta_button}
+                                {pricingContent.cta_button}
                             </span>
                              <span className="absolute inset-0 bg-red-500 rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-300"></span>
                         </a>
                     </div>
                 </div>
             </main>
+            <Footer content={content.footer} />
         </div>
     );
 };

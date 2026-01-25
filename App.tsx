@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
     const pages: { [key: string]: React.ReactNode } = {
         home: <HomePage content={currentContent} />,
-        pricing: <PricingPage content={currentContent.pricing} onNavigate={navigate} />,
+        pricing: <PricingPage content={currentContent} onNavigate={navigate} />,
     };
 
     return (

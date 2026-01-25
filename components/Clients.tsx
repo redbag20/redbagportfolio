@@ -47,8 +47,8 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
 
         // Setup continuous marquee animation
         let container: HTMLDivElement | null = null;
-        const handleMouseEnter = () => marqueeAnimation.current?.pause();
-        const handleMouseLeave = () => marqueeAnimation.current?.play();
+        const handleInteractionStart = () => marqueeAnimation.current?.pause();
+        const handleInteractionEnd = () => marqueeAnimation.current?.play();
         
         const marqueeTimer = setTimeout(() => {
             if (!marquee) return;
@@ -73,11 +73,13 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
                 }
             });
 
-            // Pause on hover
+            // Pause on hover/touch
             container = marquee.parentElement as HTMLDivElement;
             if (container) {
-                container.addEventListener('mouseenter', handleMouseEnter);
-                container.addEventListener('mouseleave', handleMouseLeave);
+                container.addEventListener('mouseenter', handleInteractionStart);
+                container.addEventListener('mouseleave', handleInteractionEnd);
+                container.addEventListener('touchstart', handleInteractionStart, { passive: true });
+                container.addEventListener('touchend', handleInteractionEnd);
             }
         }, 100);
 
@@ -85,8 +87,10 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
             clearTimeout(marqueeTimer);
             marqueeAnimation.current?.kill();
             if (container) {
-                container.removeEventListener('mouseenter', handleMouseEnter);
-                container.removeEventListener('mouseleave', handleMouseLeave);
+                container.removeEventListener('mouseenter', handleInteractionStart);
+                container.removeEventListener('mouseleave', handleInteractionEnd);
+                container.removeEventListener('touchstart', handleInteractionStart);
+                container.removeEventListener('touchend', handleInteractionEnd);
             }
             ctx.revert();
         };

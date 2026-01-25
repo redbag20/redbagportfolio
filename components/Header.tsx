@@ -91,13 +91,13 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, content, onNavig
                     <div className="md:hidden">
                         <button 
                             onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                            className="relative w-8 h-8 focus:outline-none"
+                            className="relative w-10 h-10 -mr-2 focus:outline-none"
                             aria-label="Open menu"
                         >
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6">
-                                <span aria-hidden="true" className={`block absolute h-0.5 w-6 bg-red-500 transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45' : '-translate-y-1.5'}`} style={{boxShadow: '0 0 8px rgba(255,15,15,0.8)'}}></span>
-                                <span aria-hidden="true" className={`block absolute h-0.5 w-6 bg-red-500 transform transition duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : ''}`} style={{boxShadow: '0 0 8px rgba(255,15,15,0.8)'}}></span>
-                                <span aria-hidden="true" className={`block absolute h-0.5 w-6 bg-red-500 transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45' : 'translate-y-1.5'}`} style={{boxShadow: '0 0 8px rgba(255,15,15,0.8)'}}></span>
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8">
+                                <span aria-hidden="true" className={`block absolute h-0.5 w-8 bg-red-500 transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45' : '-translate-y-3'}`} style={{boxShadow: '0 0 8px rgba(255,15,15,0.8)'}}></span>
+                                <span aria-hidden="true" className={`block absolute h-0.5 w-8 bg-red-500 transform transition duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'translate-y-0'}`} style={{boxShadow: '0 0 8px rgba(255,15,15,0.8)'}}></span>
+                                <span aria-hidden="true" className={`block absolute h-0.5 w-8 bg-red-500 transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45' : 'translate-y-3'}`} style={{boxShadow: '0 0 8px rgba(255,15,15,0.8)'}}></span>
                             </div>
                         </button>
                     </div>

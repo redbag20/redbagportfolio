@@ -26,8 +26,7 @@ const PhoneDeck: React.FC<PhoneDeckProps> = ({ items }) => {
         const marqueeEl = marqueeRef.current;
         const container = marqueeEl.parentElement;
         
-        // Let the component render before trying to get elements
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             const itemsArr = gsap.utils.toArray('.marquee-item') as HTMLDivElement[];
             if(itemsArr.length === 0 || !itemsArr[0]) return;
 
@@ -46,23 +45,29 @@ const PhoneDeck: React.FC<PhoneDeckProps> = ({ items }) => {
                 }
             });
 
-            const handleMouseEnter = () => animation.current?.pause();
-            const handleMouseLeave = () => animation.current?.play();
+            const handleInteractionStart = () => animation.current?.pause();
+            const handleInteractionEnd = () => animation.current?.play();
 
             if (container) {
-                container.addEventListener('mouseenter', handleMouseEnter);
-                container.addEventListener('mouseleave', handleMouseLeave);
+                container.addEventListener('mouseenter', handleInteractionStart);
+                container.addEventListener('mouseleave', handleInteractionEnd);
+                container.addEventListener('touchstart', handleInteractionStart, { passive: true });
+                container.addEventListener('touchend', handleInteractionEnd);
             }
-            
-            return () => {
-                animation.current?.kill();
-                if (container) {
-                    container.removeEventListener('mouseenter', handleMouseEnter);
-                    container.removeEventListener('mouseleave', handleMouseLeave);
-                }
-            };
-        }, 100); // Small delay to ensure correct width calculation
+        }, 100);
 
+        return () => {
+            clearTimeout(timer);
+            animation.current?.kill();
+            if (container) {
+                const handleInteractionStart = () => animation.current?.pause();
+                const handleInteractionEnd = () => animation.current?.play();
+                container.removeEventListener('mouseenter', handleInteractionStart);
+                container.removeEventListener('mouseleave', handleInteractionEnd);
+                container.removeEventListener('touchstart', handleInteractionStart);
+                container.removeEventListener('touchend', handleInteractionEnd);
+            }
+        };
     }, [items]);
 
     if (!items || items.length === 0) {

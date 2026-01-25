@@ -59,7 +59,7 @@ export const content: Record<Language, any> = {
             nav: {
                 about: 'About',
                 portfolio: 'Portfolio',
-                pricing: '견적',
+                pricing: 'Price',
                 contact: 'Contact',
             },
         },
@@ -168,6 +168,9 @@ export const content: Record<Language, any> = {
             email: 'redbag20contact@gmail.com',
             cta_button: '카카오톡으로 문의하기',
             social_title: 'Follow Me'
+        },
+        footer: {
+            copyright: 'Copyright © {year} Red Bag. All rights reserved.'
         }
     },
     EN: {
@@ -285,6 +288,9 @@ export const content: Record<Language, any> = {
             email: 'redbag20contact@gmail.com',
             cta_button: 'Contact via KakaoTalk',
             social_title: 'Follow Me'
+        },
+        footer: {
+            copyright: 'Copyright © {year} Red Bag. All rights reserved.'
         }
     }
 };
