@@ -21,6 +21,7 @@ interface PricingPageProps {
             cards: PriceCardData[];
             cta_button: string;
             pricingNotes: NotesSectionData;
+            generalNotes: NotesSectionData;
             copyrightNotes: NotesSectionData;
         },
         footer: {
@@ -121,6 +122,10 @@ const PricingPage: React.FC<PricingPageProps> = ({ content, onNavigate }) => {
 
                     {pricingContent.pricingNotes && (
                         <NotesSection notes={pricingContent.pricingNotes} className="mt-16" />
+                    )}
+
+                    {pricingContent.generalNotes && (
+                        <NotesSection notes={pricingContent.generalNotes} className="mt-8" />
                     )}
 
                     {pricingContent.copyrightNotes && (

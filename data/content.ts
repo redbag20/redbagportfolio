@@ -115,10 +115,10 @@ export const content: Record<Language, any> = {
                 {
                     title: '작곡 & 편곡',
                     features: [
-                        '오리지널 곡: ₩700,000~',
-                        '상업용 BGM: ₩500,000~',
+                        '16비트 / 8비트 레트로: ₩70,000',
                         '방송용 음악 (~1분): ₩100,000',
-                        '16비트 / 8비트 레트로: ₩50,000',
+                        '오리지널 곡: ₩700,000~',
+                        '상업용 BGM 및 사운드 디자인: ₩800,000~',
                     ],
                     note: '협의 후 가격이 변동될 수 있습니다.',
                 },
@@ -126,10 +126,10 @@ export const content: Record<Language, any> = {
                     title: '믹스 & 마스터링',
                     features: [
                         '스탠다드 (보정 포함, 트랙 무제한): ₩70,000',
-                        '베이직 (보정 미포함): ₩50,000',
+                        '보컬믹스만: ₩50,000',
                         '1절 믹스: ₩40,000',
                         '음정/박자보정(추가 1인당): +₩20,000',
-                        '빠른 마감: +₩50,000',
+                        '빠른 마감 (3일 이내): +₩50,000',
                         '당일 마감: +₩70,000',
                     ],
                     note: '',
@@ -151,6 +151,14 @@ export const content: Record<Language, any> = {
                     '**저작권 양도**: 방송, 상업 음반 발매 등 저작권의 완전한 양도가 필요한 경우, 기본 견적의 2배 비용이 적용됩니다.',
                     '**상업적 이용**: 광고, 게임 삽입 등 제작물을 상업적 목적으로 사용하는 경우, 기본 견적의 2배 비용이 적용됩니다. (저작권 양도와 별개)',
                     '**협의 및 조정**: 모든 서비스 비용은 프로젝트의 규모, 복잡성, 기간 등 제반 사항에 따라 상호 협의 하에 조정될 수 있습니다.',
+                ]
+            },
+            generalNotes: {
+                title: '작업 및 환불 정책 안내',
+                list: [
+                    '**작업 기간**: 별도 협의가 없는 한, 모든 작곡 및 믹스/마스터링 작업은 평균적으로 2주 이내에 완료됩니다.',
+                    '**환불 정책**: 작업 시작 후 3일 이내 요청 시 50% 환불, 1주일 이내 요청 시 30% 환불이 가능하며, 그 이후에는 환불이 불가능합니다.',
+                    '**환불 불가 사유**: 단순 변심으로 인한 환불은 불가능합니다.',
                 ]
             },
             copyrightNotes: {
@@ -235,21 +243,21 @@ export const content: Record<Language, any> = {
                 {
                     title: 'Composition & Arrangement',
                     features: [
-                        'Original Song: ₩700,000~',
-                        'Commercial BGM: ₩500,000~',
+                        '16Bit / 8Bit Retro: ₩70,000',
                         'Broadcast Music (~1 min): ₩100,000',
-                        '16Bit / 8Bit Retro: ₩50,000',
+                        'Original Song: ₩700,000~',
+                        'Commercial BGM & Sound Design: ₩800,000~',
                     ],
                     note: 'Prices may vary after consultation.',
                 },
                 {
                     title: 'Mix & Mastering',
                     features: [
-                        'Standard M&M (Correction incl.): ₩70,000 (Unlimited Tracks)',
-                        'Basic M&M (No Correction): ₩50,000',
+                        'Standard (Correction incl., Unlimited Tracks): ₩70,000',
+                        'Vocal Mix Only: ₩50,000',
                         '1 Verse Mix: ₩40,000',
-                        'Pitch/Time Correction: +₩20,000 (per person)',
-                        'Rush Fee (Fast): +₩50,000',
+                        'Pitch/Time Correction (per person): +₩20,000',
+                        'Rush Fee (within 3 days): +₩50,000',
                         'Same Day Delivery: +₩70,000',
                     ],
                     note: '',
@@ -271,6 +279,14 @@ export const content: Record<Language, any> = {
                     '**Copyright Transfer**: For a complete transfer of copyright (e.g., for broadcasting or commercial album releases), the cost is double the base rate.',
                     '**Commercial Use**: For commercial use (e.g., in ads or games), the cost is double the base rate. This is separate from copyright transfer.',
                     '**Consultation & Adjustments**: All service fees are negotiable and can be adjusted based on project scope, complexity, and other requirements.',
+                ]
+            },
+            generalNotes: {
+                title: 'Workflow & Refund Policy',
+                list: [
+                    '**Turnaround Time**: Unless otherwise agreed upon, all composition and mix/mastering work is typically completed within 2 weeks.',
+                    '**Refund Policy**: A 50% refund is available for requests made within 3 days of project commencement, and a 30% refund for requests made within 1 week. After 1 week, no refunds will be issued.',
+                    '**Non-refundable Cases**: Refunds for a simple change of mind are not permitted.',
                 ]
             },
             copyrightNotes: {
