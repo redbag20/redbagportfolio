@@ -15,40 +15,37 @@ const portfolioOrder: PortfolioCategory[] = ['오리지널 및 개인 프로젝�
 
 const Portfolio: React.FC<PortfolioProps> = ({ content }) => {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-    
-    const openModal = (youtubeId: string) => {
-        setSelectedVideo(youtubeId);
-    };
-
-    const closeModal = () => {
-        setSelectedVideo(null);
-    };
 
     return (
-        <section id="portfolio" className="py-24 md:py-40 relative overflow-hidden">
-            <div className="container mx-auto px-6 text-center mb-16 scroll-reveal relative z-10">
-                <h2 className="text-4xl md:text-5xl font-black text-white text-glow uppercase tracking-widest">{content.title}</h2>
+        <section id="portfolio" className="py-28 md:py-44 relative overflow-hidden">
+            <div className="container mx-auto px-6 mb-20 scroll-reveal relative z-10">
+                <h2 className="text-5xl md:text-6xl font-extrabold text-white uppercase tracking-tight font-display">{content.title}</h2>
+                <div className="w-12 h-[3px] bg-red-500 mt-4"></div>
             </div>
-            
-            <div className="relative z-10 space-y-20">
+
+            <div className="relative z-10 space-y-24">
                 {portfolioOrder.map(category => {
                     const categoryItems = content.items.filter(item => item.category === category);
                     if (categoryItems.length === 0) return null;
 
                     return (
                         <div key={category} className="scroll-reveal">
-                            <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-300 mb-8 tracking-wide">{content.categories[category]}</h3>
+                            <div className="container mx-auto px-6 mb-6">
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-300 tracking-wide font-display">
+                                    {content.categories[category]}
+                                </h3>
+                            </div>
                             <div className="relative">
-                                <div className="absolute top-0 bottom-0 left-0 w-12 md:w-24 z-10 bg-gradient-to-r from-black to-transparent"></div>
-                                <PortfolioMarquee items={categoryItems} onCardClick={openModal} />
-                                <div className="absolute top-0 bottom-0 right-0 w-12 md:w-24 z-10 bg-gradient-to-l from-black to-transparent"></div>
+                                <div className="absolute top-0 bottom-0 left-0 w-16 md:w-32 z-10 bg-gradient-to-r from-[#050505] to-transparent"></div>
+                                <PortfolioMarquee items={categoryItems} onCardClick={(id) => setSelectedVideo(id)} />
+                                <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 z-10 bg-gradient-to-l from-[#050505] to-transparent"></div>
                             </div>
                         </div>
                     );
                 })}
             </div>
 
-            {selectedVideo && <Modal youtubeId={selectedVideo} onClose={closeModal} />}
+            {selectedVideo && <Modal youtubeId={selectedVideo} onClose={() => setSelectedVideo(null)} />}
         </section>
     );
 };

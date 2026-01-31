@@ -16,52 +16,67 @@ interface ContactProps {
     }
 }
 
+const socials = [
+    { href: 'https://www.youtube.com/@redbagmusic20', icon: YouTubeIcon, label: 'YouTube' },
+    { href: 'https://x.com/RedBag20', icon: TwitterIcon, label: 'Twitter' },
+    { href: 'https://discordapp.com/users/394411135265439746', icon: DiscordIcon, label: 'Discord' },
+    { href: 'https://soundcloud.com/redbagmusics', icon: SoundcloudIcon, label: 'SoundCloud' },
+    { href: 'https://www.instagram.com/red_bagmusic/', icon: InstagramIcon, label: 'Instagram' },
+    { href: 'https://open.spotify.com/artist/3vNTm5jI4IdPYBupammjTN?si=BLE8QIWeQyS3egi9TMgb0g', icon: SpotifyIcon, label: 'Spotify' },
+];
+
 const Contact: React.FC<ContactProps> = ({ content }) => {
     return (
-        <section id="contact" className="py-24 md:py-32 text-center">
-            <div className="container mx-auto px-6 scroll-reveal max-w-3xl">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-wider">{content.title}</h2>
-                
-                <div className="mt-10">
-                    <a 
-                        href="https://open.kakao.com/me/redbagmusic"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative inline-flex items-center justify-center gap-3 text-lg font-bold"
-                    >
-                        <span className="relative z-10 px-8 py-4 text-white bg-[#FF0F0F] rounded-full transition-transform duration-300 ease-in-out group-hover:scale-105">
-                            <ChatIcon className="inline-block w-5 h-5 mr-2" />
-                            {content.cta_button}
-                        </span>
-                         <span className="absolute inset-0 bg-red-500 rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-300"></span>
-                    </a>
-                </div>
+        <section id="contact" className="py-28 md:py-40">
+            <div className="container mx-auto px-6 max-w-6xl scroll-reveal">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+                    {/* Left — big headline */}
+                    <div className="md:col-span-5">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]" style={{ wordBreak: 'keep-all', whiteSpace: 'pre-line' }}>
+                            {content.title}
+                        </h2>
+                        <div className="w-12 h-[3px] bg-red-500 mt-6"></div>
+                    </div>
 
-                <div className="mt-8 text-gray-400">
-                    <p>or email at <a href={`mailto:${content.email}`} className="text-red-400 hover:underline transition-colors">{content.email}</a></p>
-                </div>
+                    {/* Right — CTA + socials */}
+                    <div className="md:col-span-7 flex flex-col gap-10">
+                        <div>
+                            <a
+                                href="https://open.kakao.com/me/redbagmusic"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="cta-pulse inline-flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-500 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-[1.03]"
+                            >
+                                <ChatIcon className="w-5 h-5" />
+                                {content.cta_button}
+                            </a>
+                        </div>
 
-                <div className="mt-20">
-                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-10 tracking-wider">{content.social_title}</h3>
-                     <div className="flex justify-center items-center space-x-6 md:space-x-8">
-                        <a href="https://www.youtube.com/@redbagmusic20" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors duration-300 transform hover:scale-110">
-                            <YouTubeIcon className="w-8 h-8" />
-                        </a>
-                        <a href="https://x.com/RedBag20" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors duration-300 transform hover:scale-110">
-                            <TwitterIcon className="w-7 h-7" />
-                        </a>
-                        <a href="https://discordapp.com/users/394411135265439746" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors duration-300 transform hover:scale-110">
-                            <DiscordIcon className="w-8 h-8" />
-                        </a>
-                        <a href="https://soundcloud.com/redbagmusics" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors duration-300 transform hover:scale-110">
-                            <SoundcloudIcon className="w-8 h-8" />
-                        </a>
-                        <a href="https://www.instagram.com/red_bagmusic/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors duration-300 transform hover:scale-110">
-                            <InstagramIcon className="w-8 h-8" />
-                        </a>
-                        <a href="https://open.spotify.com/artist/3vNTm5jI4IdPYBupammjTN?si=BLE8QIWeQyS3egi9TMgb0g" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors duration-300 transform hover:scale-110">
-                            <SpotifyIcon className="w-7 h-7" />
-                        </a>
+                        <p className="text-gray-500 text-sm">
+                            or email at{' '}
+                            <a href={`mailto:${content.email}`} className="text-gray-300 hover:text-red-400 transition-colors underline underline-offset-4 decoration-gray-700 hover:decoration-red-500">
+                                {content.email}
+                            </a>
+                        </p>
+
+                        <div>
+                            <h3 className="text-xs uppercase tracking-[0.3em] text-gray-600 mb-5 font-medium">{content.social_title}</h3>
+                            <div className="flex flex-wrap gap-5">
+                                {socials.map(({ href, icon: Icon, label }) => (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group flex items-center gap-2 text-gray-600 hover:text-white transition-colors duration-300"
+                                        aria-label={label}
+                                    >
+                                        <Icon className="w-5 h-5" />
+                                        <span className="text-xs tracking-wider hidden md:inline opacity-0 group-hover:opacity-100 transition-opacity duration-300">{label}</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

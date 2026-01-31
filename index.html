@@ -1,34 +1,100 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Red Bag | Sound Engineer & Composer</title>
+    <meta name="description" content="Red Bag - 프리랜서 사운드 엔지니어 & 작곡가. BGM 작곡, 보컬 믹스/마스터링, 보컬 디렉팅, 라이브 음향 오퍼레이팅, 사운드 디자인. Freelance Sound Engineer & Composer." />
+    <meta name="keywords" content="사운드 엔지니어, 작곡가, BGM, 믹스마스터링, 보컬 디렉팅, 라이브 음향, 사운드 디자인, Sound Engineer, Composer, Red Bag, 프리랜서" />
+    <meta name="author" content="Red Bag" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://redbagportfolio.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Red Bag | Sound Engineer & Composer" />
+    <meta property="og:description" content="프리랜서 사운드 엔지니어 & 작곡가 Red Bag의 포트폴리오. BGM 작곡, 믹스/마스터링, 보컬 디렉팅, 라이브 음향 오퍼레이팅." />
+    <meta property="og:image" content="https://redbagportfolio.vercel.app/RedBag_OG.png" />
+    <meta property="og:url" content="https://redbagportfolio.vercel.app/" />
+    <meta property="og:site_name" content="Red Bag Portfolio" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Red Bag | Sound Engineer & Composer" />
+    <meta name="twitter:description" content="프리랜서 사운드 엔지니어 & 작곡가 Red Bag 포트폴리오" />
+    <meta name="twitter:image" content="https://redbagportfolio.vercel.app/RedBag_OG.png" />
+    <title>Red Bag | Sound Engineer & Composer - 프리랜서 사운드 엔지니어 & 작곡가</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Red Bag",
+        "url": "https://redbagportfolio.vercel.app",
+        "jobTitle": "Freelance Sound Engineer & Composer",
+        "description": "프리랜서 사운드 엔지니어 & 작곡가. BGM 작곡, 믹스/마스터링, 보컬 디렉팅, 라이브 음향 오퍼레이팅, 사운드 디자인.",
+        "knowsAbout": ["Sound Engineering", "Music Composition", "Mix & Mastering", "Vocal Directing", "Live Sound Operating", "Sound Design", "Dolby Atmos"],
+        "sameAs": [
+            "https://www.youtube.com/@redbagmusic20",
+            "https://x.com/RedBag20",
+            "https://soundcloud.com/redbagmusics",
+            "https://www.instagram.com/red_bagmusic/",
+            "https://open.spotify.com/artist/3vNTm5jI4IdPYBupammjTN"
+        ],
+        "email": "redbag20contact@gmail.com"
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', 'Exo 2', sans-serif;
+            font-family: 'Outfit', sans-serif;
             background-color: #050505;
             color: #e0e0e0;
+        }
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        /* Grain overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+        /* Custom cursor */
+        @media (pointer: fine) {
+            * { cursor: none !important; }
+            .custom-cursor {
+                position: fixed;
+                width: 12px;
+                height: 12px;
+                background: #FF0F0F;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 99999;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: difference;
+                transition: transform 0.15s ease;
+            }
+            .custom-cursor.hovering {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0.5;
+            }
         }
         .text-glow {
             text-shadow: 0 0 10px rgba(255, 15, 15, 0.7), 0 0 25px rgba(255, 15, 15, 0.5);
         }
         .scroll-reveal {
-            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
             opacity: 0;
-            transform: translateY(50px);
-        }
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+            transform: translateY(60px);
         }
         .hero-bg {
             position: absolute;
@@ -43,17 +109,17 @@
             z-index: -1;
         }
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 4px;
         }
         ::-webkit-scrollbar-track {
-            background: #111;
+            background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background: #444;
-            border-radius: 4px;
+            background: #333;
+            border-radius: 2px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #f02020;
+            background: #FF0F0F;
         }
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -75,6 +141,62 @@
         .animate-page-in {
             animation: page-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
+        .hero-glow-cursor {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,15,15,0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s;
+        }
+        /* Hero text - single layer gradient */
+        .hero-text-clip {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(4rem, 15vw, 14rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #fff 0%, #FF0F0F 70%, #FF0F0F 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Scroll indicator */
+        @keyframes scroll-bounce {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(10px); opacity: 1; }
+        }
+        .scroll-indicator {
+            animation: scroll-bounce 2s ease-in-out infinite;
+        }
+        /* Animated underline for nav */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF0F0F;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        /* CTA pulse border */
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,15,15,0.6); }
+            50% { box-shadow: 0 0 0 8px rgba(255,15,15,0); }
+        }
+        .cta-pulse {
+            animation: pulse-border 2.5s ease-in-out infinite;
+        }
     </style>
 <script type="importmap">
 {
@@ -88,6 +210,14 @@
 </head>
 <body>
     <div id="root"></div>
+    <noscript>
+        <div style="text-align:center;padding:2rem;color:#e0e0e0;background:#050505;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+            <h1>Red Bag - Sound Engineer & Composer</h1>
+            <p>프리랜서 사운드 엔지니어 & 작곡가 Red Bag의 포트폴리오입니다.</p>
+            <p>이 사이트는 JavaScript가 필요합니다. 브라우저에서 JavaScript를 활성화해주세요.</p>
+            <p>Contact: <a href="mailto:redbag20contact@gmail.com" style="color:#ff0f0f;">redbag20contact@gmail.com</a></p>
+        </div>
+    </noscript>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script type="module" src="/index.tsx"></script>

@@ -23,7 +23,7 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
         if (!sectionRef.current || typeof window === 'undefined' || !window.gsap || clients_data.length === 0) return;
         
         const { gsap } = window;
-        gsap.registerPlugin(gsap.ScrollTrigger);
+        if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
         const marquee = marqueeRef.current;
         const titleEl = sectionRef.current?.querySelector('.clients-title');
@@ -103,13 +103,18 @@ const Clients: React.FC<ClientsProps> = ({ content, clients_data }) => {
             </div>
             <div className="w-full overflow-hidden">
                 <div ref={marqueeRef} className="flex w-max items-center">
-                    {[...clients_data, ...clients_data].map((client, index) => (
-                        <div key={index} className="client-logo px-12 md:px-20 flex-shrink-0">
-                            <img 
-                                src={client.logo} 
-                                alt={client.name} 
-                                className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" 
-                            />
+                    {[...clients_data, ...clients_data, ...clients_data, ...clients_data].map((client, index) => (
+                        <div key={index} className="client-logo px-6 md:px-10 flex-shrink-0">
+                            <div className="flex flex-col items-center gap-2">
+                                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/[0.06] border border-white/[0.08] overflow-hidden flex items-center justify-center p-3 hover:bg-white/[0.1] hover:border-white/[0.15] transition-all duration-300">
+                                    <img
+                                        src={client.logo}
+                                        alt={client.name}
+                                        className="w-full h-full object-contain rounded-lg"
+                                    />
+                                </div>
+                                <span className="text-[10px] text-gray-600 tracking-wider whitespace-nowrap">{client.name}</span>
+                            </div>
                         </div>
                     ))}
                 </div>

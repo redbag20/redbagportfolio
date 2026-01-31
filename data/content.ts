@@ -72,6 +72,11 @@ export const content: Record<Language, any> = {
         about: {
             name: "Red Bag",
             role: "프리랜서 사운드 엔지니어 및 작곡가",
+            stats: [
+                { value: 5, suffix: '+', label: '경력 (년)' },
+                { value: 40, suffix: '+', label: '프로젝트' },
+                { value: 7, suffix: '+', label: '클라이언트' },
+            ],
             summary_title: "경력 요약",
             summary: [
                 "정화예술대학교 뮤직테크놀로지학과 졸업",
@@ -172,10 +177,10 @@ export const content: Record<Language, any> = {
             }
         },
         contact: {
-            title: '함께 일할 준비가 되셨나요?',
+            title: '함께 일할\n준비가 되셨나요?',
             email: 'redbag20contact@gmail.com',
             cta_button: '카카오톡으로 문의하기',
-            social_title: 'Follow Me'
+            social_title: 'SNS'
         },
         footer: {
             copyright: 'Copyright © {year} Red Bag. All rights reserved.'
@@ -200,26 +205,31 @@ export const content: Record<Language, any> = {
         about: {
             name: "Red Bag",
             role: "Freelance Sound Engineer & Composer",
+            stats: [
+                { value: 5, suffix: '+', label: 'Years' },
+                { value: 40, suffix: '+', label: 'Projects' },
+                { value: 7, suffix: '+', label: 'Clients' },
+            ],
             summary_title: "Career Summary",
             summary: [
-                "Graduated from Jeonghwa Arts University, Dept. of Music Technology",
-                "Currently a freelance sound operator at Scon (Live streaming, content sound production)",
-                "Completed numerous BGM outsourcing projects for games and exhibitions",
-                "Winner of the official Norazo Remix Contest and released the track",
+                "B.A. in Music Technology, Jeonghwa Arts University",
+                "Freelance sound operator at Scon (live streaming & content production)",
+                "BGM & sound design for games, exhibitions, and commercial projects",
+                "Winner of the official Norazo Remix Contest (released on streaming platforms)",
             ],
             services_title: "Key Services",
             services: [
-                "Composing commercial/animation video music (BGM, theme songs)",
-                "On/offline event and live broadcast sound operation",
-                "Vocal mixing & mastering and post-production sound for video",
-                "Immersive audio (Dolby Atmos) production and sound engineering",
+                "Commercial & animation BGM / theme song composition",
+                "Live & online event sound operation",
+                "Vocal mixing, mastering & video post-production audio",
+                "Immersive audio (Dolby Atmos) production & engineering",
             ],
             strengths_title: "Core Strengths",
             strengths: [
-                "Analytical skills to capture the narrative and target audience needs",
-                "Detailed sound design and directing abilities considering video editing points",
-                "Flexible communication and collaboration with various stakeholders",
-                "Continuous research and practical application of the latest audio technologies",
+                "Narrative-driven sound design aligned with content goals",
+                "Precision editing and detailed audio directing",
+                "Clear, flexible communication across teams",
+                "Up-to-date expertise in modern audio technologies",
             ]
         },
         portfolio: {
@@ -272,7 +282,7 @@ export const content: Record<Language, any> = {
                     note: 'Travel fees may apply for on-site support.',
                 },
             ],
-            cta_button: 'Get a Quote (KakaoTalk)',
+            cta_button: 'Get in Touch',
             pricingNotes: {
                 title: 'Pricing Policy',
                 list: [
@@ -300,10 +310,10 @@ export const content: Record<Language, any> = {
             }
         },
         contact: {
-            title: 'Ready to work together?',
+            title: "Let's Work Together",
             email: 'redbag20contact@gmail.com',
             cta_button: 'Contact via KakaoTalk',
-            social_title: 'Follow Me'
+            social_title: 'SNS'
         },
         footer: {
             copyright: 'Copyright © {year} Red Bag. All rights reserved.'

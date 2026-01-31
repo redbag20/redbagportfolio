@@ -88,7 +88,7 @@ const PhoneDeck: React.FC<PhoneDeckProps> = ({ items }) => {
                         <div className="relative h-full aspect-video overflow-hidden rounded-xl shadow-lg">
                             <img 
                                 src={item.image} 
-                                alt={`Featured work ${item.id}`}
+                                alt={`Red Bag 포트폴리오 작업물 #${item.id}`}
                                 className="w-full h-full object-cover" 
                                 loading="lazy"
                             />

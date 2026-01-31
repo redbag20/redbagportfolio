@@ -8,13 +8,31 @@ interface PortfolioMarqueeProps {
 }
 
 const VideoCard: React.FC<{ item: PortfolioItem; onClick: () => void }> = ({ item, onClick }) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        const el = cardRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        el.style.transform = `perspective(600px) rotateY(${x * 12}deg) rotateX(${-y * 8}deg) scale(1.04)`;
+    };
+    const handleMouseLeave = () => {
+        const el = cardRef.current;
+        if (!el) return;
+        el.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)';
+    };
+
     return (
-        <div 
+        <div
             className="group relative flex-shrink-0 w-[440px] h-[247.5px] mx-5"
             onClick={onClick}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
         >
             <button className="w-full h-full text-left">
-                <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl shadow-black/40 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105">
+                <div ref={cardRef} className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl shadow-black/40 transition-transform duration-300 ease-out" style={{ transformStyle: 'preserve-3d' }}>
                     <div className="absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 group-hover:border-red-500 group-hover:shadow-[0_0_35px_-5px_rgba(255,15,15,0.8)] z-10"></div>
                     <img 
                         src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`} 
