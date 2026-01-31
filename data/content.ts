@@ -55,7 +55,7 @@ const phoneDeckItems = portfolioItems.map(item => ({
 export const content: Record<Language, any> = {
     KR: {
         header: {
-            logo: 'Blue Bag',
+            logo: 'Red Bag',
             nav: {
                 about: 'About',
                 portfolio: 'Portfolio',
@@ -188,7 +188,7 @@ export const content: Record<Language, any> = {
     },
     EN: {
         header: {
-            logo: 'Blue Bag',
+            logo: 'Red Bag',
             nav: {
                 about: 'About',
                 portfolio: 'Portfolio',
