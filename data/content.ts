@@ -8,7 +8,7 @@ const portfolioItems: PortfolioItem[] = [
     { id: 26, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj2/500/500', title: 'ALLDAYPROJECT REMIX', role: 'Remix', date: '2023.11', youtubeId: 'TlEWl_qfI5I' },
     { id: 27, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj3/500/500', title: '3인 리믹스 프로젝트 총괄', role: 'Collab & Remix', date: '2024.01', youtubeId: 'vIwP0vzat2Y' },
     { id: 28, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj4/500/500', title: 'Karol G - La Vida Es Una [Division One & Red Bag Remix]', role: 'Remix', date: '2023.09', youtubeId: '9O_60zzt5mc' },
-    
+
     // 보컬 디렉팅 및 믹스마스터링
     { id: 32, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix3/500/500', title: '미녕이데려오께 - 있잖아 (글로벌 콘텐츠 페스티벌 2025)', role: 'Operating, Vocal Mix/Master', date: '2025.01', youtubeId: 'eWwUkpY1DjU' },
     { id: 33, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix4/500/500', title: '마젯 - 좋지 아니한가 (글로벌 콘텐츠 페스티벌 2025)', role: 'Operating, Vocal Mix/Master', date: '2025.01', youtubeId: 'KuXSAe-Sm5o' },
@@ -55,7 +55,7 @@ const phoneDeckItems = portfolioItems.map(item => ({
 export const content: Record<Language, any> = {
     KR: {
         header: {
-            logo: 'Red Bag',
+            logo: 'Blue Bag',
             nav: {
                 about: 'About',
                 portfolio: 'Portfolio',
@@ -188,7 +188,7 @@ export const content: Record<Language, any> = {
     },
     EN: {
         header: {
-            logo: 'Red Bag',
+            logo: 'Blue Bag',
             nav: {
                 about: 'About',
                 portfolio: 'Portfolio',
