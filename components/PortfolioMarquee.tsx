@@ -34,18 +34,18 @@ const VideoCard: React.FC<{ item: PortfolioItem; onClick: () => void }> = ({ ite
             <button className="w-full h-full text-left">
                 <div ref={cardRef} className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl shadow-black/40 transition-transform duration-300 ease-out" style={{ transformStyle: 'preserve-3d' }}>
                     <div className="absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 group-hover:border-red-500 group-hover:shadow-[0_0_35px_-5px_rgba(255,15,15,0.8)] z-10"></div>
-                    <img 
-                        src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`} 
+                    <img
+                        src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                         <div className="w-16 h-16 bg-red-600/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20">
+                        <div className="w-16 h-16 bg-red-600/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20">
                             <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path></svg>
-                         </div>
+                        </div>
                     </div>
-                     <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                         <h3 className="text-white font-bold text-lg truncate">{item.title}</h3>
                         <p className="text-red-400 text-sm font-medium">{item.role}</p>
                     </div>
@@ -60,6 +60,12 @@ const PortfolioMarquee: React.FC<PortfolioMarqueeProps> = ({ items, onCardClick 
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
 
+    // Drag state
+    const isDown = useRef(false);
+    const startX = useRef(0);
+    const scrollLeft = useRef(0);
+    const isDragging = useRef(false);
+
     const checkScrollButtons = () => {
         const el = marqueeRef.current;
         if (!el) return;
@@ -71,12 +77,12 @@ const PortfolioMarquee: React.FC<PortfolioMarqueeProps> = ({ items, onCardClick 
     useEffect(() => {
         const el = marqueeRef.current;
         if (!el) return;
-        
+
         checkScrollButtons();
 
         el.addEventListener('scroll', checkScrollButtons, { passive: true });
         window.addEventListener('resize', checkScrollButtons);
-        
+
         return () => {
             el.removeEventListener('scroll', checkScrollButtons);
             window.removeEventListener('resize', checkScrollButtons);
@@ -92,10 +98,68 @@ const PortfolioMarquee: React.FC<PortfolioMarqueeProps> = ({ items, onCardClick 
             behavior: 'smooth'
         });
     };
-    
+
+    // Drag handlers
+    const handleMouseDown = (e: React.MouseEvent) => {
+        const el = marqueeRef.current;
+        if (!el) return;
+        isDown.current = true;
+        isDragging.current = false;
+        startX.current = e.pageX - el.offsetLeft;
+        scrollLeft.current = el.scrollLeft;
+        el.style.cursor = 'grabbing';
+        // Disable snap while dragging
+        el.style.scrollSnapType = 'none';
+    };
+
+    const handleMouseLeave = () => {
+        isDown.current = false;
+        const el = marqueeRef.current;
+        if (el) {
+            el.style.cursor = 'grab';
+            el.style.scrollSnapType = 'x mandatory';
+        }
+    };
+
+    const handleMouseUp = () => {
+        isDown.current = false;
+        const el = marqueeRef.current;
+        if (el) {
+            el.style.cursor = 'grab';
+            el.style.scrollSnapType = 'x mandatory';
+        }
+        // Small delay to reset dragging state so click handler can read it if needed
+        setTimeout(() => {
+            isDragging.current = false;
+        }, 0);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDown.current) return;
+        e.preventDefault();
+        const el = marqueeRef.current;
+        if (!el) return;
+
+        const x = e.pageX - el.offsetLeft;
+        const walk = (x - startX.current) * 2; // Scroll-fast
+
+        if (Math.abs(walk) > 5) {
+            isDragging.current = true;
+        }
+
+        el.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const handleCaptureClick = (e: React.MouseEvent) => {
+        if (isDragging.current) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+    };
+
     return (
         <div className="relative group/marquee">
-            <button 
+            <button
                 onClick={() => handleNavClick('left')}
                 aria-label="Scroll left"
                 className="absolute top-1/2 -translate-y-1/2 left-0 z-20 p-4 bg-black/40 rounded-full text-white transition-all duration-300 hover:bg-black/70 disabled:opacity-0 disabled:cursor-not-allowed transform opacity-0 group-hover/marquee:opacity-100 -translate-x-6"
@@ -104,21 +168,26 @@ const PortfolioMarquee: React.FC<PortfolioMarqueeProps> = ({ items, onCardClick 
                 <LeftArrowIcon />
             </button>
 
-            <div 
-                ref={marqueeRef} 
-                className="flex overflow-x-auto py-2 snap-x snap-mandatory no-scrollbar"
+            <div
+                ref={marqueeRef}
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                onClickCapture={handleCaptureClick}
+                className="flex overflow-x-auto py-2 snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing"
             >
                 {items.map((item, index) => (
                     <div className="snap-start" key={`${item.id}-${index}`}>
-                        <VideoCard 
-                            item={item} 
+                        <VideoCard
+                            item={item}
                             onClick={() => item.youtubeId && onCardClick(item.youtubeId)}
                         />
                     </div>
                 ))}
             </div>
 
-            <button 
+            <button
                 onClick={() => handleNavClick('right')}
                 aria-label="Scroll right"
                 className="absolute top-1/2 -translate-y-1/2 right-0 z-20 p-4 bg-black/40 rounded-full text-white transition-all duration-300 hover:bg-black/70 disabled:opacity-0 disabled:cursor-not-allowed transform opacity-0 group-hover/marquee:opacity-100 translate-x-6"
