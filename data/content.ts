@@ -19,6 +19,7 @@ const portfolioItems: PortfolioItem[] = [
     { id: 37, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix8/500/500', title: '라온 Office 협업 / 보컬 디렉팅 ', role: 'Vocal Directing', date: '2024.07', youtubeId: 'dI3myyT-Uwg' },
 
     // 라이브 사운드 오퍼레이팅
+    { id: 41, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/bluejump/500/500', title: '블루점프 생방송 음향 및 오퍼레이팅', role: 'Sound Operating', date: '2025.12', youtubeId: 'M7RA8isL1Qs' },
     { id: 40, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live_dubbing_forest/500/500', title: '더빙의 숲 3 본선 스튜디오 사운드 오퍼레이팅', role: 'Studio Sound Operating', date: '2024.07', youtubeId: 'oEzw_Ay90kU' },
     { id: 17, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live2/500/500', title: '이오몽 X 정동하 생방송 음향 총괄', role: 'Live Sound Operating', date: '2024.04', youtubeId: 'llZ4MTcy7Uk' },
     { id: 18, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live3/500/500', title: 'IXIA 데뷔 생방송 음향 세팅 총괄', role: 'Live Sound Mix', date: '2024.03', youtubeId: 'KNABwaYmuA8' },
