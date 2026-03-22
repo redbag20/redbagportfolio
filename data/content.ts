@@ -131,9 +131,10 @@ export const content: Record<Language, any> = {
                 {
                     title: '믹스 & 마스터링',
                     features: [
-                        '스탠다드 (보정 포함, 트랙 무제한): ₩70,000',
-                        '보컬믹스만: ₩50,000',
-                        '1절 믹스: ₩40,000',
+                        '솔로곡 풀믹스: ₩49,000',
+                        '듀엣곡 풀믹스: ₩70,000',
+                        '믹스마스터 only: ₩21,000',
+                        '1절치기 믹스: ₩35,000',
                         '음정/박자보정(추가 1인당): +₩20,000',
                         '빠른 마감 (3일 이내): +₩50,000',
                         '당일 마감: +₩70,000',
@@ -264,9 +265,10 @@ export const content: Record<Language, any> = {
                 {
                     title: 'Mix & Mastering',
                     features: [
-                        'Standard (Correction incl., Unlimited Tracks): ₩70,000',
-                        'Vocal Mix Only: ₩50,000',
-                        '1 Verse Mix: ₩40,000',
+                        'Solo Full Mix: ₩49,000',
+                        'Duet Full Mix: ₩70,000',
+                        'Mix/Master Only: ₩21,000',
+                        '1 Verse Mix: ₩35,000',
                         'Pitch/Time Correction (per person): +₩20,000',
                         'Rush Fee (within 3 days): +₩50,000',
                         'Same Day Delivery: +₩70,000',
