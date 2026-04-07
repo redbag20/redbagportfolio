@@ -31,17 +31,36 @@ const CheckmarkIcon = () => (
 
 const PriceCard: React.FC<{ card: PriceCardData; index: number }> = ({ card, index }) => {
     const featuresWithPriceStyling = card.features.map(feature => {
-        const parts = feature.split(/(: ₩|: \+₩)/);
+        const strikethroughMatch = feature.match(/(.*?)(~~(.*?)~~)?$/);
+        const mainFeature = strikethroughMatch ? strikethroughMatch[1].trim() : feature;
+        const originalPrice = strikethroughMatch ? strikethroughMatch[3] : undefined;
+
+        const parts = mainFeature.split(/(: ₩|: \+₩)/);
         if (parts.length > 1) {
             const pricePart = (parts[1] + parts[2]).replace(' (', '\u00A0(');
             return (
-                <span key={feature}>
-                    {parts[0]}
-                    <span className="text-lg font-bold text-white">{pricePart}</span>
+                <span key={feature} className="flex flex-wrap items-baseline gap-x-2">
+                    <span>
+                        {parts[0]}
+                        <span className="text-lg font-bold text-white">{pricePart}</span>
+                    </span>
+                    {originalPrice && (
+                        <span className="text-xs text-gray-500 line-through decoration-gray-500">{originalPrice}</span>
+                    )}
                 </span>
             );
         }
-        return feature;
+        
+        if (originalPrice) {
+            return (
+                <span key={feature} className="flex flex-wrap items-baseline gap-x-2">
+                    <span>{mainFeature}</span>
+                    <span className="text-xs text-gray-500 line-through decoration-gray-500">{originalPrice}</span>
+                </span>
+            );
+        }
+
+        return mainFeature;
     });
 
     return (
