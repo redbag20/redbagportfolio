@@ -2,6 +2,7 @@ import type { PortfolioItem, Client, Language, PortfolioCategory } from '../type
 
 const portfolioItems: PortfolioItem[] = [
     // 오리지널 및 개인 프로젝트
+    { id: 42, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj7/500/500', title: 'Splatoon - Bomb Rush Blush [ Red Bag Remix ] feat. Kilo & Penta', role: 'Remix', date: '2026.04', youtubeId: 'MYXAUL9zod0' },
     { id: 38, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj5/500/500', title: 'ACID TECHNO ◉ HUNTRIX - TAKEDOWN (Red Bag Remix)', role: 'Remix', date: '2024.07', youtubeId: 'VKBG8B2Puvw' },
     { id: 39, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj6/500/500', title: 'MIMI - だきしめるまで。(Covered by Kotoha) [Juyong & Red Bag Remix]', role: 'Remix', date: '2024.06', youtubeId: 'izwxUR_NhUQ' },
     { id: 25, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj1/500/500', title: 'Division One (KR) & Red Bag - Music Is My Everything', role: '음악 작곡', date: '2024.03', youtubeId: 'niJU0dqOSqY' },
