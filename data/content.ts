@@ -104,8 +104,8 @@ export const content: Record<Language, any> = {
             ],
             partner_streamers_title: "파트너 스트리머",
             partner_streamers: [
-                { name: "에냐", image: enyaImg },
-                { name: "아즈", image: azImg }
+                { name: "에냐", image: enyaImg, url: "https://www.sooplive.com/station/onyu98" },
+                { name: "아즈", image: azImg, url: "https://chzzk.naver.com/e2640468861f80d658873c25dc69e32b" }
             ]
         },
         portfolio: {
@@ -243,8 +243,8 @@ export const content: Record<Language, any> = {
             ],
             partner_streamers_title: "Partner Streamers",
             partner_streamers: [
-                { name: "에냐", image: enyaImg },
-                { name: "아즈", image: azImg }
+                { name: "에냐", image: enyaImg, url: "https://www.sooplive.com/station/onyu98" },
+                { name: "아즈", image: azImg, url: "https://chzzk.naver.com/e2640468861f80d658873c25dc69e32b" }
             ]
         },
         portfolio: {

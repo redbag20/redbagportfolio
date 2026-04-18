@@ -20,7 +20,7 @@ interface AboutProps {
         strengths_title: string;
         strengths: string[];
         partner_streamers_title?: string;
-        partner_streamers?: { name: string; image: string }[];
+        partner_streamers?: { name: string; image: string; url?: string }[];
     }
 }
 
@@ -160,19 +160,19 @@ const About: React.FC<AboutProps> = ({ content }) => {
                                 </h3>
                                 <div className="flex gap-6 md:gap-10 flex-wrap">
                                     {content.partner_streamers.map((streamer, idx) => (
-                                        <div key={idx} className="flex flex-col items-center group">
-                                            <div className="w-40 h-52 md:w-56 md:h-72 rounded-2xl overflow-hidden bg-white/[0.02] border border-gray-800/50 group-hover:border-red-500/50 transition-all duration-300 relative shadow-lg flex items-center justify-center p-4">
+                                        <a key={idx} href={streamer.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group cursor-pointer">
+                                            <div className="w-40 h-52 md:w-56 md:h-72 rounded-2xl overflow-hidden bg-white/[0.02] border border-gray-800/50 group-hover:border-red-500/50 transition-all duration-300 relative shadow-lg">
                                                 <img 
                                                     src={streamer.image} 
                                                     alt={streamer.name} 
-                                                    className="w-full h-full object-contain object-center scale-110 group-hover:scale-125 transition-transform duration-500 drop-shadow-2xl" 
+                                                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" 
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                                             </div>
                                             <span className="mt-4 text-base md:text-lg font-semibold text-gray-400 group-hover:text-white transition-colors duration-300 tracking-wide">
                                                 {streamer.name}
                                             </span>
-                                        </div>
+                                        </a>
                                     ))}
                                 </div>
                             </div>
