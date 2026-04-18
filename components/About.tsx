@@ -161,11 +161,11 @@ const About: React.FC<AboutProps> = ({ content }) => {
                                 <div className="flex gap-6 md:gap-10 flex-wrap">
                                     {content.partner_streamers.map((streamer, idx) => (
                                         <div key={idx} className="flex flex-col items-center group">
-                                            <div className="w-32 h-40 md:w-40 md:h-52 rounded-2xl overflow-hidden bg-white/[0.02] border border-gray-800/50 group-hover:border-red-500/50 transition-all duration-300 relative shadow-lg flex items-end justify-center pt-4">
+                                            <div className="w-40 h-52 md:w-56 md:h-72 rounded-2xl overflow-hidden bg-white/[0.02] border border-gray-800/50 group-hover:border-red-500/50 transition-all duration-300 relative shadow-lg flex items-center justify-center p-4">
                                                 <img 
                                                     src={streamer.image} 
                                                     alt={streamer.name} 
-                                                    className="w-[90%] h-[95%] object-contain object-bottom group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl" 
+                                                    className="w-full h-full object-contain object-center scale-110 group-hover:scale-125 transition-transform duration-500 drop-shadow-2xl" 
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                                             </div>
