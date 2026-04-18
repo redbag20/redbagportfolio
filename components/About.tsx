@@ -19,6 +19,8 @@ interface AboutProps {
         services: string[];
         strengths_title: string;
         strengths: string[];
+        partner_streamers_title?: string;
+        partner_streamers?: { name: string; image: string }[];
     }
 }
 
@@ -149,6 +151,32 @@ const About: React.FC<AboutProps> = ({ content }) => {
                                 />
                             ))}
                         </div>
+
+                        {content.partner_streamers && content.partner_streamers.length > 0 && (
+                            <div className="mt-12 pt-8 border-t border-gray-800/40 scroll-reveal">
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-6 font-display flex items-center">
+                                    <span className="w-1.5 h-6 bg-red-500 mr-3 inline-block rounded-sm"></span>
+                                    {content.partner_streamers_title}
+                                </h3>
+                                <div className="flex gap-6 md:gap-10 flex-wrap">
+                                    {content.partner_streamers.map((streamer, idx) => (
+                                        <div key={idx} className="flex flex-col items-center group">
+                                            <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-gray-900 border-2 border-gray-800/50 group-hover:border-red-500/80 transition-all duration-300 relative shadow-xl shadow-black/50">
+                                                <img 
+                                                    src={streamer.image} 
+                                                    alt={streamer.name} 
+                                                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" 
+                                                />
+                                                <div className="absolute inset-0 bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
+                                            </div>
+                                            <span className="mt-4 text-base md:text-lg font-semibold text-gray-400 group-hover:text-white transition-colors duration-300 tracking-wide">
+                                                {streamer.name}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

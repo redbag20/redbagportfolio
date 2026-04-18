@@ -99,6 +99,11 @@ export const content: Record<Language, any> = {
                 "디테일한 사운드 디자인 및 연출 능력",
                 "유연한 커뮤니케이션을 통한 협업 능력",
                 "최신 오디오 기술에 대한 지속적인 연구와 실무 적용 능력",
+            ],
+            partner_streamers_title: "파트너 스트리머",
+            partner_streamers: [
+                { name: "에냐", image: "/images/enya.png" },
+                { name: "아즈", image: "/images/az.png" }
             ]
         },
         portfolio: {
@@ -233,6 +238,11 @@ export const content: Record<Language, any> = {
                 "Precision editing and detailed audio directing",
                 "Clear, flexible communication across teams",
                 "Up-to-date expertise in modern audio technologies",
+            ],
+            partner_streamers_title: "Partner Streamers",
+            partner_streamers: [
+                { name: "에냐", image: "/images/enya.png" },
+                { name: "아즈", image: "/images/az.png" }
             ]
         },
         portfolio: {
