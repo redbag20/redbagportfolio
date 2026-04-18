@@ -161,13 +161,13 @@ const About: React.FC<AboutProps> = ({ content }) => {
                                 <div className="flex gap-6 md:gap-10 flex-wrap">
                                     {content.partner_streamers.map((streamer, idx) => (
                                         <div key={idx} className="flex flex-col items-center group">
-                                            <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-gray-900 border-2 border-gray-800/50 group-hover:border-red-500/80 transition-all duration-300 relative shadow-xl shadow-black/50">
+                                            <div className="w-32 h-40 md:w-40 md:h-52 rounded-2xl overflow-hidden bg-white/[0.02] border border-gray-800/50 group-hover:border-red-500/50 transition-all duration-300 relative shadow-lg flex items-end justify-center pt-4">
                                                 <img 
                                                     src={streamer.image} 
                                                     alt={streamer.name} 
-                                                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" 
+                                                    className="w-[90%] h-[95%] object-contain object-bottom group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl" 
                                                 />
-                                                <div className="absolute inset-0 bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                                             </div>
                                             <span className="mt-4 text-base md:text-lg font-semibold text-gray-400 group-hover:text-white transition-colors duration-300 tracking-wide">
                                                 {streamer.name}

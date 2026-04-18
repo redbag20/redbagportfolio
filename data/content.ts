@@ -1,4 +1,6 @@
 import type { PortfolioItem, Client, Language, PortfolioCategory } from '../types';
+import enyaImg from './images/enya.png';
+import azImg from './images/az.png';
 
 const portfolioItems: PortfolioItem[] = [
     // 오리지널 및 개인 프로젝트
@@ -102,8 +104,8 @@ export const content: Record<Language, any> = {
             ],
             partner_streamers_title: "파트너 스트리머",
             partner_streamers: [
-                { name: "에냐", image: "/images/enya.png" },
-                { name: "아즈", image: "/images/az.png" }
+                { name: "에냐", image: enyaImg },
+                { name: "아즈", image: azImg }
             ]
         },
         portfolio: {
@@ -241,8 +243,8 @@ export const content: Record<Language, any> = {
             ],
             partner_streamers_title: "Partner Streamers",
             partner_streamers: [
-                { name: "에냐", image: "/images/enya.png" },
-                { name: "아즈", image: "/images/az.png" }
+                { name: "에냐", image: enyaImg },
+                { name: "아즈", image: azImg }
             ]
         },
         portfolio: {
