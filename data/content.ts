@@ -22,6 +22,7 @@ const portfolioItems: PortfolioItem[] = [
     { id: 37, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix8/500/500', title: '라온 Office 협업 / 보컬 디렉팅 ', role: 'Vocal Directing', date: '2024.07', youtubeId: 'dI3myyT-Uwg' },
 
     // 라이브 사운드 오퍼레이팅
+    { id: 47, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live_mc5/500/500', title: '네이버 본사 모션캡쳐 스튜디오 현장 음향 총괄', role: 'Studio Sound Operating', date: '2024', youtubeId: 'YKB4bRTwsWA' },
     { id: 46, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live_mc4/500/500', title: '하로하 X 모구구 노래 컨텐츠 모션캡쳐 스튜디오 라이브 음향 오퍼레이팅', role: 'Studio Sound Operating', date: '2024', youtubeId: 'k9VhhC1APhk' },
     { id: 45, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live_mc3/500/500', title: '블루점프 ASMR 컨텐츠 모션캡쳐 스튜디오 라이브 음향 오퍼레이팅', role: 'Studio Sound Operating', date: '2024', youtubeId: '-n8kd_ebC0c' },
     { id: 44, category: '라이브 사운드 오퍼레이팅', image: 'https://picsum.photos/seed/live_mc2/500/500', title: '니케 광고 모션캡쳐 스튜디오 라이브 음향 오퍼레이팅', role: 'Studio Sound Operating', date: '2024', youtubeId: '7cGYLy_dV8w' },
