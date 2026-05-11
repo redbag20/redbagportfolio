@@ -136,7 +136,7 @@ export const content: Record<Language, any> = {
                     features: [
                         '16비트 / 8비트 레트로: ₩70,000 ~~₩108,000~~',
                         '방송용 음악 (~1분): ₩100,000 ~~₩154,000~~',
-                        '오리지널 곡: ₩700,000~ ~~₩1,077,000~~',
+                        '오리지널 곡: ₩700,000',
                         '상업용 BGM 및 사운드 디자인: ₩800,000~ ~~₩1,230,000~~',
                     ],
                     note: '협의 후 가격이 변동될 수 있습니다.',
@@ -275,7 +275,7 @@ export const content: Record<Language, any> = {
                     features: [
                         '16Bit / 8Bit Retro: ₩70,000 ~~₩108,000~~',
                         'Broadcast Music (~1 min): ₩100,000 ~~₩154,000~~',
-                        'Original Song: ₩700,000~ ~~₩1,077,000~~',
+                        'Original Song: ₩700,000',
                         'Commercial BGM & Sound Design: ₩800,000~ ~~₩1,230,000~~',
                     ],
                     note: 'Prices may vary after consultation.',
