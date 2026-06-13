@@ -89,6 +89,7 @@ export const content: Record<Language, any> = {
             summary_title: "경력 요약",
             summary: [
                 "정화예술대학교 뮤직테크놀로지학과 졸업",
+                "퍼플미디어 아카데미 무대음향 엔지니어과정 수료 (2025.11.29 ~ 2026.05.24)",
                 "현 스콘(Scon) 음향 오퍼레이팅 프리랜서 재직",
                 "다수의 게임 및 전시 BGM 외주 프로젝트 수행",
                 "노라조 공식 리믹스 콘테스트 우승 및 음원 발매",
@@ -229,6 +230,7 @@ export const content: Record<Language, any> = {
             summary_title: "Career Summary",
             summary: [
                 "B.A. in Music Technology, Jeonghwa Arts University",
+                "Completed 6-month Stage Sound Engineer course at Purple Media Academy (2025.11.29 - 2026.05.24)",
                 "Freelance sound operator at Scon (live streaming & content production)",
                 "BGM & sound design for games, exhibitions, and commercial projects",
                 "Winner of the official Norazo Remix Contest (released on streaming platforms)",
