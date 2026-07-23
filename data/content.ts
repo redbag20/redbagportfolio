@@ -4,6 +4,7 @@ import azImg from './images/az.png';
 
 const portfolioItems: PortfolioItem[] = [
     // 오리지널 및 개인 프로젝트
+    { id: 49, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj8/500/500', title: '【독쥐】\'Promise Way\' Official MV (concert ver)', role: 'Original Song', date: '2024', youtubeId: 'Q8xux7o2V5M' },
     { id: 42, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj7/500/500', title: 'Splatoon - Bomb Rush Blush [ Red Bag Remix ] feat. Kilo & Penta', role: 'Remix', date: '2026.04', youtubeId: 'MYXAUL9zod0' },
     { id: 38, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj5/500/500', title: 'ACID TECHNO ◉ HUNTRIX - TAKEDOWN (Red Bag Remix)', role: 'Remix', date: '2024.07', youtubeId: 'VKBG8B2Puvw' },
     { id: 39, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj6/500/500', title: 'MIMI - だきしめるまで。(Covered by Kotoha) [Juyong & Red Bag Remix]', role: 'Remix', date: '2024.06', youtubeId: 'izwxUR_NhUQ' },
@@ -13,6 +14,9 @@ const portfolioItems: PortfolioItem[] = [
     { id: 28, category: '오리지널 및 개인 프로젝트', image: 'https://picsum.photos/seed/oproj4/500/500', title: 'Karol G - La Vida Es Una [Division One & Red Bag Remix]', role: 'Remix', date: '2023.09', youtubeId: '9O_60zzt5mc' },
 
     // 보컬 디렉팅 및 믹스마스터링
+    { id: 50, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix10/500/500', title: '【독쥐】윤하 - 오르트구름 COVER', role: 'Vocal Mix/Master', date: '2024', youtubeId: 'VjQF5pyAMzM' },
+    { id: 51, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix11/500/500', title: '【독쥐】경서 - 밤하늘의 별을 COVER', role: 'Vocal Mix/Master', date: '2024', youtubeId: '4QoHyyEGZBo' },
+    { id: 52, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix12/500/500', title: '【독쥐】음율 - 파도혁명 COVER', role: 'Vocal Mix/Master', date: '2024', youtubeId: 'ZFjayCtoqV8' },
     { id: 48, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix9/500/500', title: '에냐 - ray', role: 'Vocal Mix/Master', date: '2026.06', youtubeId: 'SuIV7Vd24WI' },
     { id: 32, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix3/500/500', title: '미녕이데려오께 - 있잖아 (글로벌 콘텐츠 페스티벌 2025)', role: 'Operating, Vocal Mix/Master', date: '2025.01', youtubeId: 'eWwUkpY1DjU' },
     { id: 33, category: '보컬 디렉팅 및 믹스마스터링', image: 'https://picsum.photos/seed/vdmix4/500/500', title: '마젯 - 좋지 아니한가 (글로벌 콘텐츠 페스티벌 2025)', role: 'Operating, Vocal Mix/Master', date: '2025.01', youtubeId: 'KuXSAe-Sm5o' },
